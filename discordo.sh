@@ -23,7 +23,8 @@ else
 fi
 
 if [ "$(id -u)" != "0" ]; then
-    echo "This script requires root acces. Try: sudo discordo"
+    echo "This script requires root acces."
+    echo "Usage: sudo discordo [OPTIONS]"
     exit 1
 fi
 
