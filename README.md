@@ -10,7 +10,7 @@ This tool was created because Discord neither designed an auto-update, nor added
 
 ### Usage
 
-``` sudo discordo ```
+``` sudo discordo [OPTIONS] ```
 
 ### Options
 `--debug` or `-d` - disables all `/dev/null` statements
