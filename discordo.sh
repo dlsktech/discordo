@@ -1,6 +1,6 @@
 #!/bin/bash
 
-if ! command -v dpkg &> $output; then
+if ! command -v dpkg &> /dev/null; then
     echo "This OS is not debian based."
     exit 1
 fi
@@ -18,8 +18,6 @@ while (( "$#" )); do
       shift
       ;;
   esac
-
-
 done
 
 if $debug_mode; then
@@ -30,7 +28,7 @@ else
 fi
 
 if [ "$(id -u)" != "0" ]; then
-    echo "This script requires root acces."
+    echo "This script requires root access."
     echo "Usage: sudo discordo [OPTIONS]"
     exit 1
 fi
@@ -45,6 +43,6 @@ fi
 echo "Installing latest version of Discord..."
 dpkg -i /tmp/discord.deb &> $output
 clear
-echo "Done! You now have latest Discord version!"
+echo "Done! You now have the latest Discord version!"
 rm -f /tmp/discord.deb &> $output
 exit 0

@@ -17,4 +17,3 @@ This tool was created because Discord neither designed an auto-update, nor added
 
 ### Uninstall
 To uninstall discordo use the following command: `sudo rm -rf /usr/bin/discordo`
-
