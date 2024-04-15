@@ -16,3 +16,4 @@ This tool was created because Discord neither designed an auto-update, nor added
 ### Options
 `--debug` or `-d` - disables all `/dev/null` statements
 
+Animations from [Silejonu/bash_loading_animations](https://github.com/Silejonu/bash_loading_animations), licensed under [MIT License](https://choosealicense.com/licenses/mit/).
