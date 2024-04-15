@@ -16,3 +16,6 @@ This tool was created because Discord neither designed an auto-update, nor added
 ### Options
 `--debug` or `-d` - disables all `/dev/null` statements
 
+### Uninstall
+To uninstall discordo use following command: `sudo rm -rf /usr/bin/discordo`
+
