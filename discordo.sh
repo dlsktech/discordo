@@ -1,5 +1,10 @@
 #!/bin/bash
 
+if ! command -v dpkg &> $output; then
+    echo "This OS is not debian based."
+    exit 1
+fi
+
 debug_mode=false
 
 while (( "$#" )); do
@@ -13,6 +18,8 @@ while (( "$#" )); do
       shift
       ;;
   esac
+
+
 done
 
 if $debug_mode; then
@@ -28,10 +35,6 @@ if [ "$(id -u)" != "0" ]; then
     exit 1
 fi
 
-if ! command -v dpkg &> $output; then
-    echo "This OS is not debian based."
-    exit 1
-fi
 echo "Downloading newest version of Discord..."
 cd /tmp
 wget -O /tmp/discord.deb "https://discord.com/api/download?platform=linux&format=deb" &> $output
