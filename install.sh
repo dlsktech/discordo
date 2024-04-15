@@ -19,6 +19,6 @@ if [ -f "$file" ]; then
 fi
 
 cd /usr/bin
-sudo curl https://raw.githubusercontent.com/danielszewczuk/Discordo/main/discordo.sh --output discordo
+sudo wget -O discordo https://raw.githubusercontent.com/danielszewczuk/Discordo/main/discordo.sh
 sudo chmod +x discordo
 echo "Installed Discordo!"

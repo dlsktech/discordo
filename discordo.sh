@@ -32,6 +32,7 @@ if ! command -v dpkg &> $output; then
     exit 1
 fi
 echo "Downloading newest version of Discord..."
+cd /tmp
 wget -O /tmp/discord.deb "https://discord.com/api/download?platform=linux&format=deb" &> $output
 if [ $? -ne 0 ]; then
     echo "Download error."
