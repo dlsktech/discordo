@@ -8,14 +8,14 @@ file="/usr/bin/discordo"
 
 if [ -f "$file" ]; then
     echo "Detected old version of Discordo. Removing..."
-    rm -rf $file
+    sudo rm -rf $file
 fi
 
 file="/usr/discordo"
 
 if [ -f "$file" ]; then
     echo "Detected old version of Discordo. Removing..."
-    rm -rf $file
+    sudo rm -rf $file
 fi
 
 cd /usr/bin
