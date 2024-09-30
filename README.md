@@ -6,7 +6,7 @@ This tool was created because Discord neither designed an auto-update, nor added
 
 ### Install
 
-``` wget -O - https://raw.githubusercontent.com/danielszewczuk/Discordo/main/install.sh | sudo bash - ```
+``` wget -O - https://discordo.dlsk.tech/install.sh | sudo bash - ```
 
 ### Usage
 
