@@ -16,16 +16,16 @@ fi
 
 debug_mode=false
 
-while (( "$#" )); do
+while (("$#")); do
     case "$1" in
-        -d|--debug)
-            debug_mode=true
-            shift
-            ;;
-        *)
-            PARAMS="$PARAMS $1"
-            shift
-            ;;
+    -d | --debug)
+        debug_mode=true
+        shift
+        ;;
+    *)
+        PARAMS="$PARAMS $1"
+        shift
+        ;;
     esac
 done
 

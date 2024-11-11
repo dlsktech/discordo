@@ -14,7 +14,7 @@ for file in "${files[@]}"; do
         echo "Detected Discordo in $file. Remove? (Y/n)"
         read -r remove
         case $remove in
-        n | N)
+        n|N)
             echo "Skipping."
             ;;
         *)
