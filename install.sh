@@ -1,24 +1,35 @@
+#! /bin/bash
+
 clear
+
 if [ "$(id -u)" != "0" ]; then
-    echo "This script requires root acces."
+    echo 'This script requires root acces.'
     exit 1
 fi
 
-file="/usr/bin/discordo"
+files=('/usr/bin/discordo' '/usr/discordo')
 
-if [ -f "$file" ]; then
-    echo "Detected old version of Discordo. Removing..."
-    sudo rm -rf $file
+for file in "${files[@]}"; do
+    if [ -f "$file" ]; then
+        echo "Detected Discordo in $file. Remove? (Y/n)"
+        read -r remove
+        case $remove in
+        n|N)
+            echo "Skipping."
+            ;;
+        *)
+            rm "$file"
+            ;;
+        esac
+    fi
+done
+
+if [ ! -d "/usr/bin" ]; then
+    mkdir -p /usr/bin
+    export PATH="$PATH:/usr/bin"
+    echo 'Make sure to add /usr/bin to $PATH'
 fi
 
-file="/usr/discordo"
-
-if [ -f "$file" ]; then
-    echo "Detected old version of Discordo. Removing..."
-    sudo rm -rf $file
-fi
-
-cd /usr/bin
-sudo wget -O discordo https://discordo.dlsk.tech/discordo.sh &> /dev/null
-sudo chmod +x discordo
-echo "Installed Discordo!"
+curl -fsL 'https://discordo.dlsk.tech/discordo.sh' -o /usr/bin/discordo || echo 'Failed to download Discordo'
+sudo chmod +x /usr/bin/discordo
+echo 'Installed Discordo!'

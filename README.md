@@ -7,7 +7,7 @@ This tool was created because Discord neither designed an auto-update, nor added
 ### Install
 
 ```bash
-wget -O - https://discordo.dlsk.tech/install.sh | sudo bash -
+curl -fsSL https://discordo.dlsk.tech/install.sh | sudo bash
 ```
 
 ### Usage
